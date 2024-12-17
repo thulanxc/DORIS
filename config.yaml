@@ -1,0 +1,25 @@
+embedding_model:
+  name: "thenlper/gte-small"
+  batch_size: 32
+
+llm:
+  enabled: true
+  api_key: "your-api-key-here"
+  model_name: "gpt-4o-mini"
+  max_retries: 5
+  batch_size: 50
+  similarity_threshold: 
+
+mood_course:
+  emotion_threshold_percentile:  # Top m% posts to keep for each emotion
+  alpha:   # Weight for mood course summary
+  beta:    # Weight for average post embeddings
+
+post_history:
+  enabled: true  # Enable/disable post history feature extraction
+
+paths:
+  templates: "data/depression_templates.txt"
+  emotion_templates: "data/emotion_templates.yaml"
+  output_dir: "results"
+
